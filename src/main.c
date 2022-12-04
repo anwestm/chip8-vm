@@ -11,24 +11,12 @@
 
 int g_vm_running = 1;
 
-struct data {
-    int first:2;
-    int second:2;
-
-} Age;
-
 int main(int argc, char *argv[]) {
     printf("Hello, World!\n");
 
-    struct data a;
-    Age.first = 1;
-
-    printf("%d\n", Age);
-
-
     monitor_setup();
 
-    chip8_load_game("D:/dev/c-dev/chip8-vm/rom/test_opcode.ch8");
+    chip8_load_game("D:/dev/c-dev/chip8-vm/rom/pong.rom");
     chip8_initialize();
 
     while (g_vm_running == 1) {
